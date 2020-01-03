@@ -40,6 +40,7 @@ teams1 = [
 
 teams2 = [
     ['LA', 'Los Angeles', 'Rams', 'Los Angeles Rams', 'L.A.'],
+    ['LAC', 'Los Angeles C', 'Chargers', 'Los Angeles Chargers', 'L.A.C']
 ]
 
 

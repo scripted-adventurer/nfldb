@@ -30,7 +30,7 @@ Finally, you need to tell nfldb how to connect to the database. Find the sample 
 
 mkdir -p $HOME/.config/nfldb
 
-cp /etc/xdg/nfldb/config.ini.sample $HOME/.config/nfldb/config.ini
+cp config.ini.sample $HOME/.config/nfldb/config.ini
 
 
 

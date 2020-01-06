@@ -8,3 +8,4 @@ wiki
 build
 *.pyc
 *.egg-info
+TODO.txt

@@ -1,3 +1,40 @@
+This is a fork of the nfldb module, which relies on the nflgame module. Both have been updated to make them work for the 2019 NFL season by making changes to handle the Chargers' move to Los Angeles and London games with an AM Eastern time scheduled start. 
+
+### Installation Guide:
+
+First, make sure that git and pip are installed on your system. 
+
+Then run the following command as root (this will install the updated fork of nflgame):
+
+pip install git+https://github.com/scripted-adventurer/nflgame.git
+
+Next, install postgres and create a new database. These are the steps I followed on Ubuntu:
+1. Run the following command as root:
+apt-get install postgresql postgresql-contrib
+2. Connect to psql using the default postgres user:
+sudo -u postgres psql
+3. Issue the following commands to create a new database, a new user, and give that user full permission to edit the database (where {password} is the password you wish to set):
+CREATE DATABASE nfldb;
+CREATE USER nfldb WITH ENCRYPTED PASSWORD '{password}';
+GRANT ALL PRIVILEGES ON DATABASE nfldb TO nfldb;
+
+Next, extract the database dump file (nfldb.sql) and import it to your database. Below is the command I used:
+
+psql -U nfldb -h 127.0.0.1 nfldb < nfldb.sql
+
+Then run the following command as root (this will install the updated fork of nfldb):
+
+pip install git+https://github.com/scripted-adventurer/nfldb.git
+
+Finally, you need to tell nfldb how to connect to the database. Find the sample configuration file (config.ini.sample) or download it from the repository. Open it with your favorite text editor and update the parameters to match the database you created (you should only need to update the password unless you used a different username or db name). Then copy it into your default configuration directory. Below are the commands I ran (from the directory where I saved the updated config.ini.sample):
+
+mkdir -p $HOME/.config/nfldb
+cp /etc/xdg/nfldb/config.ini.sample $HOME/.config/nfldb/config.ini
+
+
+
+-original nfldb guide-
+
 **THIS PROJECT IS UNMAINTAINED.**
 
 nfldb is a relational database bundled with a Python module to quickly and

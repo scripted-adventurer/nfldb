@@ -29,6 +29,7 @@ pip install git+https://github.com/scripted-adventurer/nfldb.git
 Finally, you need to tell nfldb how to connect to the database. Find the sample configuration file (config.ini.sample) or download it from the repository. Open it with your favorite text editor and update the parameters to match the database you created (you should only need to update the password unless you used a different username or db name). Then copy it into your default configuration directory. Below are the commands I ran (from the directory where I saved the updated config.ini.sample):
 
 mkdir -p $HOME/.config/nfldb
+
 cp /etc/xdg/nfldb/config.ini.sample $HOME/.config/nfldb/config.ini
 
 
